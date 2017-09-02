@@ -1,0 +1,42 @@
+---
+title: "HIPAA Identifiers Report"
+subtitle: '`r format(Sys.Date(), "%B %d, %Y")`'
+fontsize: 10pt
+geometry: margin=1cm
+output:
+  pdf_document:
+    includes:
+        in_header: mySty.sty
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(xtable.comment = FALSE,echo = FALSE,comment=NA,message=FALSE, warning=FALSE)
+```
+
+
+
+```{r cars,results="asis"}
+
+source("Report.r")
+     
+library(knitr)
+library(data.table)
+library(xtable)
+options(xtable.comment = FALSE)
+
+     reportParams = ReportParameters$new(dataFile=tolower("Diaceutics v2_deid_061517.csv"), showOriginal = FALSE,extractedTextLength=90L, instancesToShow=100L, printInstances =FALSE,  wrapTextWidth=40L )
+report<-Report$new(reportParams)
+
+
+
+ print(xtable(report$ShowTotalsdt(),align= c("p{0.000\\textwidth}|", "p{0.39\\textwidth}|" ,"p{0.39\\textwidth}|")),include.rownames=FALSE)
+
+
+if(nrow(report$getSurgicalNumbers())>0)
+print(xtable(as.data.table(head(report$getSurgicalNumbers()[,c("rownumber","obfuscatedtext")],n=reportParams$instancesToShow))),include.rownames=FALSE)
+  
+ 
+```
+\pagebreak
+
