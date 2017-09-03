@@ -56,21 +56,21 @@ if(nrow(report$getNameChanges()>0)){
 
 if(nrow(report$getpatientDateOfBirth())>0)
 {
- tab<- xtable(as.data.table(head(report$getpatientDateOfBirth()[,c("rownumber","obfuscatedtext")],n=60)),caption=paste0(safeDataFileName, " Patient Date Of Birth"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getpatientDateOfBirth()[,c("rownumber","obfuscatedtext")],n=60)),caption=paste0(safeDataFileName, " patient date of birth"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   names(tab) <- c('Row','Text' )
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 
 if(nrow(report$getPatDates())>0)
 {
- tab<- xtable(as.data.table(head(report$getPatDates()[,c("rownumber","patient draw date")],n=60)),caption=paste0(safeDataFileName, " Patient Draw Dates"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getPatDates()[,c("rownumber","patient draw date")],n=60)),caption=paste0(safeDataFileName, " patient draw dates"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 
   
 if(nrow(report$getPatAgeOverMax())>0)
 {
- tab<- xtable(as.data.table(head(report$getPatAgeOverMax()[,c("rownumber","patient age over max")],n=60)),caption=paste0(safeDataFileName, " Examples Of Patient Age Over Max"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getPatAgeOverMax()[,c("rownumber","patient age over max")],n=60)),caption=paste0(safeDataFileName, " patient age over max"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 
@@ -130,21 +130,21 @@ if(nrow(report$getNameChanges())>0){
 
 if(nrow(report$getpatientDateOfBirth())>0)
 {
- tab<- xtable(as.data.table(head(report$getpatientDateOfBirth()[,c("rownumber","obfuscatedtext")],n=60)),caption=paste0(safeDataFileName, " Patient Date Of Birth"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getpatientDateOfBirth()[,c("rownumber","obfuscatedtext")],n=60)),caption=paste0(safeDataFileName, " patient date of birth"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   names(tab) <- c('Row','Text' )
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 
 if(nrow(report$getPatDates())>0)
 {
- tab<- xtable(as.data.table(head(report$getPatDates()[,c("rownumber","patient draw date")],n=60)),caption=paste0(safeDataFileName, " Patient Draw Dates"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getPatDates()[,c("rownumber","patient draw date")],n=60)),caption=paste0(safeDataFileName, " patient draw dates"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 
   
 if(nrow(report$getPatAgeOverMax())>0)
 {
- tab<- xtable(as.data.table(head(report$getPatAgeOverMax()[,c("rownumber","patient age over max")],n=60)),caption=paste0(safeDataFileName, " Examples Of Patient Age Over Max"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getPatAgeOverMax()[,c("rownumber","patient age over max")],n=60)),caption=paste0(safeDataFileName, " patient age over max"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 
@@ -201,21 +201,21 @@ if(nrow(report$getNameChanges())>0){
 
 if(nrow(report$getpatientDateOfBirth())>0)
 {
- tab<- xtable(as.data.table(head(report$getpatientDateOfBirth()[,c("rownumber","obfuscatedtext")],n=60)),caption=paste0(safeDataFileName, " Patient Date Of Birth"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getpatientDateOfBirth()[,c("rownumber","obfuscatedtext")],n=60)),caption=paste0(safeDataFileName, " patient date of birth"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   names(tab) <- c('Row','Text' )
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 
 if(nrow(report$getPatDates())>0)
 {
- tab<- xtable(as.data.table(head(report$getPatDates()[,c("rownumber","patient draw date")],n=60)),caption=paste0(safeDataFileName, " Patient Draw Dates"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getPatDates()[,c("rownumber","patient draw date")],n=60)),caption=paste0(safeDataFileName, " patient draw dates"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 
   
 if(nrow(report$getPatAgeOverMax())>0)
 {
- tab<- xtable(as.data.table(head(report$getPatAgeOverMax()[,c("rownumber","patient age over max")],n=60)),caption=paste0(safeDataFileName, " Examples Of Patient Age Over Max"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getPatAgeOverMax()[,c("rownumber","patient age over max")],n=60)),caption=paste0(safeDataFileName, " patient age over max"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 
@@ -268,18 +268,18 @@ if(nrow(report$getNameChanges())>0){
 }
 if(nrow(report$getpatientDateOfBirth())>0)
 {
- tab<- xtable(as.data.table(head(report$getpatientDateOfBirth()[,c("rownumber","obfuscatedtext")],n=60)),caption=paste0(safeDataFileName, " Patient Date Of Birth"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getpatientDateOfBirth()[,c("rownumber","obfuscatedtext")],n=60)),caption=paste0(safeDataFileName, " patient date of birth"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   names(tab) <- c('Row','Text' )
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 if(nrow(report$getPatDates())>0)
 {
- tab<- xtable(as.data.table(head(report$getPatDates()[,c("rownumber","patient draw date")],n=60)),caption=paste0(safeDataFileName, " Patient Draw Dates"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getPatDates()[,c("rownumber","patient draw date")],n=60)),caption=paste0(safeDataFileName, " patient draw dates"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 if(nrow(report$getPatAgeOverMax())>0)
 {
- tab<- xtable(as.data.table(head(report$getPatAgeOverMax()[,c("rownumber","patient age over max")],n=60)),caption=paste0(safeDataFileName, " Examples Of Patient Age Over Max"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getPatAgeOverMax()[,c("rownumber","patient age over max")],n=60)),caption=paste0(safeDataFileName, " patient age over max"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 if(nrow(report$getValidZipCodes())>0)
@@ -330,18 +330,18 @@ if(nrow(report$getNameChanges())>0){
 }
 if(nrow(report$getpatientDateOfBirth())>0)
 {
- tab<- xtable(as.data.table(head(report$getpatientDateOfBirth()[,c("rownumber","obfuscatedtext")],n=60)),caption=paste0(safeDataFileName, " Patient Date Of Birth"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getpatientDateOfBirth()[,c("rownumber","obfuscatedtext")],n=60)),caption=paste0(safeDataFileName, " patient date of birth"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   names(tab) <- c('Row','Text' )
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 if(nrow(report$getPatDates())>0)
 {
- tab<- xtable(as.data.table(head(report$getPatDates()[,c("rownumber","patient draw date")],n=60)),caption=paste0(safeDataFileName, " Patient Draw Dates"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getPatDates()[,c("rownumber","patient draw date")],n=60)),caption=paste0(safeDataFileName, " patient draw dates"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 if(nrow(report$getPatAgeOverMax())>0)
 {
- tab<- xtable(as.data.table(head(report$getPatAgeOverMax()[,c("rownumber","patient age over max")],n=60)),caption=paste0(safeDataFileName, " Examples Of Patient Age Over Max"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getPatAgeOverMax()[,c("rownumber","patient age over max")],n=60)),caption=paste0(safeDataFileName, " patient age over max"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 if(nrow(report$getValidZipCodes())>0)
@@ -392,18 +392,18 @@ if(nrow(report$getNameChanges())>0){
 }
 if(nrow(report$getpatientDateOfBirth())>0)
 {
- tab<- xtable(as.data.table(head(report$getpatientDateOfBirth()[,c("rownumber","obfuscatedtext")],n=60)),caption=paste0(safeDataFileName, " Patient Date Of Birth"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getpatientDateOfBirth()[,c("rownumber","obfuscatedtext")],n=60)),caption=paste0(safeDataFileName, " patient date of birth"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   names(tab) <- c('Row','Text' )
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 if(nrow(report$getPatDates())>0)
 {
- tab<- xtable(as.data.table(head(report$getPatDates()[,c("rownumber","patient draw date")],n=60)),caption=paste0(safeDataFileName, " Patient Draw Dates"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getPatDates()[,c("rownumber","patient draw date")],n=60)),caption=paste0(safeDataFileName, " patient draw dates"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 if(nrow(report$getPatAgeOverMax())>0)
 {
- tab<- xtable(as.data.table(head(report$getPatAgeOverMax()[,c("rownumber","patient age over max")],n=60)),caption=paste0(safeDataFileName, " Examples Of Patient Age Over Max"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getPatAgeOverMax()[,c("rownumber","patient age over max")],n=60)),caption=paste0(safeDataFileName, " patient age over max"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 if(nrow(report$getValidZipCodes())>0)
@@ -454,18 +454,18 @@ if(nrow(report$getNameChanges())>0){
 }
 if(nrow(report$getpatientDateOfBirth())>0)
 {
- tab<- xtable(as.data.table(head(report$getpatientDateOfBirth()[,c("rownumber","obfuscatedtext")],n=60)),caption=paste0(safeDataFileName, " Patient Date Of Birth"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getpatientDateOfBirth()[,c("rownumber","obfuscatedtext")],n=60)),caption=paste0(safeDataFileName, " patient date of birth"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   names(tab) <- c('Row','Text' )
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 if(nrow(report$getPatDates())>0)
 {
- tab<- xtable(as.data.table(head(report$getPatDates()[,c("rownumber","patient draw date")],n=60)),caption=paste0(safeDataFileName, " Patient Draw Dates"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getPatDates()[,c("rownumber","patient draw date")],n=60)),caption=paste0(safeDataFileName, " patient draw dates"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 if(nrow(report$getPatAgeOverMax())>0)
 {
- tab<- xtable(as.data.table(head(report$getPatAgeOverMax()[,c("rownumber","patient age over max")],n=60)),caption=paste0(safeDataFileName, " Examples Of Patient Age Over Max"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getPatAgeOverMax()[,c("rownumber","patient age over max")],n=60)),caption=paste0(safeDataFileName, " patient age over max"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 if(nrow(report$getValidZipCodes())>0)
@@ -516,18 +516,18 @@ if(nrow(report$getNameChanges())>0){
 }
 if(nrow(report$getpatientDateOfBirth())>0)
 {
- tab<- xtable(as.data.table(head(report$getpatientDateOfBirth()[,c("rownumber","obfuscatedtext")],n=60)),caption=paste0(safeDataFileName, " Patient Date Of Birth"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getpatientDateOfBirth()[,c("rownumber","obfuscatedtext")],n=60)),caption=paste0(safeDataFileName, " patient date of birth"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   names(tab) <- c('Row','Text' )
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 if(nrow(report$getPatDates())>0)
 {
- tab<- xtable(as.data.table(head(report$getPatDates()[,c("rownumber","patient draw date")],n=60)),caption=paste0(safeDataFileName, " Patient Draw Dates"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getPatDates()[,c("rownumber","patient draw date")],n=60)),caption=paste0(safeDataFileName, " patient draw dates"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 if(nrow(report$getPatAgeOverMax())>0)
 {
- tab<- xtable(as.data.table(head(report$getPatAgeOverMax()[,c("rownumber","patient age over max")],n=60)),caption=paste0(safeDataFileName, " Examples Of Patient Age Over Max"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getPatAgeOverMax()[,c("rownumber","patient age over max")],n=60)),caption=paste0(safeDataFileName, " patient age over max"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 if(nrow(report$getValidZipCodes())>0)
@@ -579,18 +579,18 @@ if(nrow(report$getNameChanges())>0){
 }
 if(nrow(report$getpatientDateOfBirth())>0)
 {
- tab<- xtable(as.data.table(head(report$getpatientDateOfBirth()[,c("rownumber","obfuscatedtext")],n=60)),caption=paste0(safeDataFileName, " Patient Date Of Birth"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getpatientDateOfBirth()[,c("rownumber","obfuscatedtext")],n=60)),caption=paste0(safeDataFileName, " patient date of birth"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   names(tab) <- c('Row','Text' )
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 if(nrow(report$getPatDates())>0)
 {
- tab<- xtable(as.data.table(head(report$getPatDates()[,c("rownumber","patient draw date")],n=60)),caption=paste0(safeDataFileName, " Patient Draw Dates"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getPatDates()[,c("rownumber","patient draw date")],n=60)),caption=paste0(safeDataFileName, " patient draw dates"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 if(nrow(report$getPatAgeOverMax())>0)
 {
- tab<- xtable(as.data.table(head(report$getPatAgeOverMax()[,c("rownumber","patient age over max")],n=60)),caption=paste0(safeDataFileName, " Examples Of Patient Age Over Max"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getPatAgeOverMax()[,c("rownumber","patient age over max")],n=60)),caption=paste0(safeDataFileName, " patient age over max"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 if(nrow(report$getValidZipCodes())>0)
@@ -640,18 +640,18 @@ if(nrow(report$getNameChanges())>0){
 }
 if(nrow(report$getpatientDateOfBirth())>0)
 {
- tab<- xtable(as.data.table(head(report$getpatientDateOfBirth()[,c("rownumber","obfuscatedtext")],n=60)),caption=paste0(safeDataFileName, " Patient Date Of Birth"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getpatientDateOfBirth()[,c("rownumber","obfuscatedtext")],n=60)),caption=paste0(safeDataFileName, " patient date of birth"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   names(tab) <- c('Row','Text' )
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 if(nrow(report$getPatDates())>0)
 {
- tab<- xtable(as.data.table(head(report$getPatDates()[,c("rownumber","patient draw date")],n=60)),caption=paste0(safeDataFileName, " Patient Draw Dates"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getPatDates()[,c("rownumber","patient draw date")],n=60)),caption=paste0(safeDataFileName, " patient draw dates"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 if(nrow(report$getPatAgeOverMax())>0)
 {
- tab<- xtable(as.data.table(head(report$getPatAgeOverMax()[,c("rownumber","patient age over max")],n=60)),caption=paste0(safeDataFileName, " Examples Of Patient Age Over Max"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getPatAgeOverMax()[,c("rownumber","patient age over max")],n=60)),caption=paste0(safeDataFileName, " patient age over max"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 if(nrow(report$getValidZipCodes())>0)
@@ -701,18 +701,18 @@ if(nrow(report$getNameChanges())>0){
 }
 if(nrow(report$getpatientDateOfBirth())>0)
 {
- tab<- xtable(as.data.table(head(report$getpatientDateOfBirth()[,c("rownumber","obfuscatedtext")],n=60)),caption=paste0(safeDataFileName, " Patient Date Of Birth"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getpatientDateOfBirth()[,c("rownumber","obfuscatedtext")],n=60)),caption=paste0(safeDataFileName, " patient date of birth"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   names(tab) <- c('Row','Text' )
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 if(nrow(report$getPatDates())>0)
 {
- tab<- xtable(as.data.table(head(report$getPatDates()[,c("rownumber","patient draw date")],n=60)),caption=paste0(safeDataFileName, " Patient Draw Dates"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getPatDates()[,c("rownumber","patient draw date")],n=60)),caption=paste0(safeDataFileName, " patient draw dates"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 if(nrow(report$getPatAgeOverMax())>0)
 {
- tab<- xtable(as.data.table(head(report$getPatAgeOverMax()[,c("rownumber","patient age over max")],n=60)),caption=paste0(safeDataFileName, " Examples Of Patient Age Over Max"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getPatAgeOverMax()[,c("rownumber","patient age over max")],n=60)),caption=paste0(safeDataFileName, " patient age over max"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
 if(nrow(report$getValidZipCodes())>0)
