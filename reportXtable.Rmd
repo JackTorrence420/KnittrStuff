@@ -16,7 +16,7 @@ knitr::opts_chunk$set(xtable.comment = FALSE,echo = FALSE,comment=NA,message=FAL
 
 \pagebreak
 
-###Diaceutics v2_deid_061517.csv
+###Copy of DeepSee_Diaceutics_20170208_20170228_v1.csv.csv
 
 ```{r cars,results="asis"}
 
@@ -27,26 +27,60 @@ library(data.table)
 library(xtable)
 options(xtable.comment = FALSE)
 
-     reportParams = ReportParameters$new(dataFile=tolower("Diaceutics v2_deid_061517.csv"), showOriginal = FALSE,extractedTextLength=80L, instancesToShow=100L, printInstances =FALSE,  wrapTextWidth=40L )
+     reportParams = ReportParameters$new(dataFile=tolower("Copy of DeepSee_Diaceutics_20170208_20170228_v1.csv"), showOriginal = FALSE,extractedTextLength=80L, instancesToShow=100L, printInstances =FALSE,  wrapTextWidth=40L )
 report<-Report$new(reportParams)
 
+safeDataFileName<-gsub('_', ' ', reportParams$dataFile)
 
-print(xtable(report$ShowTotalsdt(),align= c("|p{0cm}|", "p{6cm}|" ,"p{11cm}|"),caption="Hello there how are you doing folks great to see you"),include.rownames=FALSE,caption.placement = "top")
+print(xtable(report$ShowTotalsdt(),align= c("|p{0cm}|", "p{6cm}|" ,"p{11cm}|"),caption=paste0(safeDataFileName," Total PHI Identifier Counts")),include.rownames=FALSE,caption.placement = "top")
 
 
 if(nrow(report$getSurgicalNumbers())>0){
-
-  
- tab<- xtable(as.data.table(head(report$getSurgicalNumbers()[,c("rownumber","obfuscatedtext")],n=reportParams$instancesToShow)),caption="Hello there how are you doing folks great to see you",align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+ tab<- xtable(as.data.table(head(report$getSurgicalNumbers()[,c("rownumber","obfuscatedtext")],n=reportParams$instancesToShow)),caption=paste0(safeDataFileName, " Surgical Numbers"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   names(tab) <- c('Row','Text' )
   print(tab,include.rownames=FALSE,caption.placement = "top" )
+}
+
+if(nrow(report$getPatientIdentifiers()>0)){
+ tab<- xtable(as.data.table(head(report$getPatientIdentifiers()[,c("rownumber","obfuscatedtext")],n=reportParams$instancesToShow)),caption=paste0(safeDataFileName, " Patient Identifiers"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+  names(tab) <- c('Row','Text' )
+  print(tab,include.rownames=FALSE,caption.placement = "top" )
+}
+
+
+if(nrow(report$getNameChanges()>0)){
+ tab<- xtable(as.data.table(head(report$getNameChanges()[,c("rownumber","obfuscatedtext")],n=reportParams$instancesToShow)),caption=paste0(safeDataFileName, " Name Changes"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+  names(tab) <- c('Row','Text' )
+  print(tab,include.rownames=FALSE,caption.placement = "top" )
+}
+
+if(nrow(report$getpatientDateOfBirth())>0)
+{
+ tab<- xtable(as.data.table(head(report$getpatientDateOfBirth()[,c("rownumber","obfuscatedtext")],n=60)),caption=paste0(safeDataFileName, " Patient Date Of Birth"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+  names(tab) <- c('Row','Text' )
+  print(tab,include.rownames=FALSE,caption.placement = "top" )
+}
+
+if(nrow(report$getPatDates())>0)
+{
+ tab<- xtable(as.data.table(head(report$getPatDates()[,c("rownumber","patient draw date")],n=60)),caption=paste0(safeDataFileName, " Patient Draw Dates"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+  print(tab,include.rownames=FALSE,caption.placement = "top" )
+}
 
   
+if(nrow(report$getPatAgeOverMax())>0)
+{
+ tab<- xtable(as.data.table(head(report$getPatAgeOverMax()[,c("rownumber","patient age over max")],n=60)),caption=paste0(safeDataFileName, " Examples Of Patient Age Over Max"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+  print(tab,include.rownames=FALSE,caption.placement = "top" )
 }
-#print(xtable(as.data.table(head(report$getSurgicalNumbers()[,c("rownumber","obfuscatedtext")],n=reportParams$instancesToShow),align= c("p{0cm}|", "p{3cm}|" #,"p{13cm}|"))),include.rownames=FALSE)
- 
- #print(xtable(as.data.table(head(report$getSurgicalNumbers()[,c("rownumber","obfuscatedtext")],n=reportParams$instancesToShow))),include.rownames=FALSE)
+
   
+if(nrow(report$getValidZipCodes())>0)
+{
+ tab<- xtable(as.data.table(head(report$getValidZipCodes()[,c("rownumber","patient address postal code")],n=60)),caption=paste0(safeDataFileName, " VAlid Zip Codes"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+  print(tab,include.rownames=FALSE,caption.placement = "top" )
+}
+
  
 ```
 \pagebreak
