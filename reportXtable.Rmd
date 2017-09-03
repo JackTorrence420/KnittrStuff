@@ -32,7 +32,7 @@ report<-Report$new(reportParams)
 
 safeDataFileName<-gsub('_', ' ', reportParams$dataFile)
 
-print(xtable(report$ShowTotalsdt(),align= c("|p{0cm}|", "p{6cm}|" ,"p{11cm}|"),caption=paste0(safeDataFileName," Totals")),include.rownames=FALSE,caption.placement = "top")
+print(xtable(report$ShowTotalsdt(),align= c("|p{0cm}|", "p{6cm}|" ,"p{11cm}|"),caption=paste0(safeDataFileName," totals")),include.rownames=FALSE,caption.placement = "top")
 
 
 if(nrow(report$getSurgicalNumbers())>0){
@@ -106,7 +106,7 @@ report<-Report$new(reportParams)
 
 safeDataFileName<-gsub('_', ' ', reportParams$dataFile)
 
-print(xtable(report$ShowTotalsdt(),align= c("|p{0cm}|", "p{6cm}|" ,"p{11cm}|"),caption=paste0(safeDataFileName," Totals")),include.rownames=FALSE,caption.placement = "top")
+print(xtable(report$ShowTotalsdt(),align= c("|p{0cm}|", "p{6cm}|" ,"p{11cm}|"),caption=paste0(safeDataFileName," totals")),include.rownames=FALSE,caption.placement = "top")
 
 
 if(nrow(report$getSurgicalNumbers())>0){
@@ -177,7 +177,7 @@ report<-Report$new(reportParams)
 
 safeDataFileName<-gsub('_', ' ', reportParams$dataFile)
 
-print(xtable(report$ShowTotalsdt(),align= c("|p{0cm}|", "p{6cm}|" ,"p{11cm}|"),caption=paste0(safeDataFileName," Totals")),include.rownames=FALSE,caption.placement = "top")
+print(xtable(report$ShowTotalsdt(),align= c("|p{0cm}|", "p{6cm}|" ,"p{11cm}|"),caption=paste0(safeDataFileName," totals")),include.rownames=FALSE,caption.placement = "top")
 
 
 if(nrow(report$getSurgicalNumbers())>0){
@@ -247,7 +247,7 @@ report<-Report$new(reportParams)
 
 safeDataFileName<-gsub('_', ' ', reportParams$dataFile)
 
-print(xtable(report$ShowTotalsdt(),align= c("|p{0cm}|", "p{6cm}|" ,"p{11cm}|"),caption=paste0(safeDataFileName," Totals")),include.rownames=FALSE,caption.placement = "top")
+print(xtable(report$ShowTotalsdt(),align= c("|p{0cm}|", "p{6cm}|" ,"p{11cm}|"),caption=paste0(safeDataFileName," totals")),include.rownames=FALSE,caption.placement = "top")
 
 
 if(nrow(report$getSurgicalNumbers())>0){
@@ -309,7 +309,7 @@ report<-Report$new(reportParams)
 
 safeDataFileName<-gsub('_', ' ', reportParams$dataFile)
 
-print(xtable(report$ShowTotalsdt(),align= c("|p{0cm}|", "p{6cm}|" ,"p{11cm}|"),caption=paste0(safeDataFileName," Totals")),include.rownames=FALSE,caption.placement = "top")
+print(xtable(report$ShowTotalsdt(),align= c("|p{0cm}|", "p{6cm}|" ,"p{11cm}|"),caption=paste0(safeDataFileName," totals")),include.rownames=FALSE,caption.placement = "top")
 
 
 if(nrow(report$getSurgicalNumbers())>0){
@@ -371,7 +371,7 @@ report<-Report$new(reportParams)
 
 safeDataFileName<-gsub('_', ' ', reportParams$dataFile)
 
-print(xtable(report$ShowTotalsdt(),align= c("|p{0cm}|", "p{6cm}|" ,"p{11cm}|"),caption=paste0(safeDataFileName," Totals")),include.rownames=FALSE,caption.placement = "top")
+print(xtable(report$ShowTotalsdt(),align= c("|p{0cm}|", "p{6cm}|" ,"p{11cm}|"),caption=paste0(safeDataFileName," totals")),include.rownames=FALSE,caption.placement = "top")
 
 
 if(nrow(report$getSurgicalNumbers())>0){
@@ -433,7 +433,7 @@ report<-Report$new(reportParams)
 
 safeDataFileName<-gsub('_', ' ', reportParams$dataFile)
 
-print(xtable(report$ShowTotalsdt(),align= c("|p{0cm}|", "p{6cm}|" ,"p{11cm}|"),caption=paste0(safeDataFileName," Totals")),include.rownames=FALSE,caption.placement = "top")
+print(xtable(report$ShowTotalsdt(),align= c("|p{0cm}|", "p{6cm}|" ,"p{11cm}|"),caption=paste0(safeDataFileName," totals")),include.rownames=FALSE,caption.placement = "top")
 
 
 if(nrow(report$getSurgicalNumbers())>0){
@@ -495,7 +495,7 @@ report<-Report$new(reportParams)
 
 safeDataFileName<-gsub('_', ' ', reportParams$dataFile)
 
-print(xtable(report$ShowTotalsdt(),align= c("|p{0cm}|", "p{6cm}|" ,"p{11cm}|"),caption=paste0(safeDataFileName," Totals")),include.rownames=FALSE,caption.placement = "top")
+print(xtable(report$ShowTotalsdt(),align= c("|p{0cm}|", "p{6cm}|" ,"p{11cm}|"),caption=paste0(safeDataFileName," totals")),include.rownames=FALSE,caption.placement = "top")
 
 
 if(nrow(report$getSurgicalNumbers())>0){
@@ -558,7 +558,7 @@ report<-Report$new(reportParams)
 
 safeDataFileName<-gsub('_', ' ', reportParams$dataFile)
 
-print(xtable(report$ShowTotalsdt(),align= c("|p{0cm}|", "p{6cm}|" ,"p{11cm}|"),caption=paste0(safeDataFileName," Totals")),include.rownames=FALSE,caption.placement = "top")
+print(xtable(report$ShowTotalsdt(),align= c("|p{0cm}|", "p{6cm}|" ,"p{11cm}|"),caption=paste0(safeDataFileName," totals")),include.rownames=FALSE,caption.placement = "top")
 
 
 if(nrow(report$getSurgicalNumbers())>0){
@@ -619,7 +619,7 @@ report<-Report$new(reportParams)
 
 safeDataFileName<-gsub('_', ' ', reportParams$dataFile)
 
-print(xtable(report$ShowTotalsdt(),align= c("|p{0cm}|", "p{6cm}|" ,"p{11cm}|"),caption=paste0(safeDataFileName," Totals")),include.rownames=FALSE,caption.placement = "top")
+print(xtable(report$ShowTotalsdt(),align= c("|p{0cm}|", "p{6cm}|" ,"p{11cm}|"),caption=paste0(safeDataFileName," totals")),include.rownames=FALSE,caption.placement = "top")
 
 
 if(nrow(report$getSurgicalNumbers())>0){
@@ -680,7 +680,7 @@ report<-Report$new(reportParams)
 
 safeDataFileName<-gsub('_', ' ', reportParams$dataFile)
 
-print(xtable(report$ShowTotalsdt(),align= c("|p{0cm}|", "p{6cm}|" ,"p{11cm}|"),caption=paste0(safeDataFileName," Totals")),include.rownames=FALSE,caption.placement = "top")
+print(xtable(report$ShowTotalsdt(),align= c("|p{0cm}|", "p{6cm}|" ,"p{11cm}|"),caption=paste0(safeDataFileName," totals")),include.rownames=FALSE,caption.placement = "top")
 
 
 if(nrow(report$getSurgicalNumbers())>0){
