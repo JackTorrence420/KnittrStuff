@@ -16,7 +16,7 @@ knitr::opts_chunk$set(xtable.comment = FALSE,echo = FALSE,comment=NA,message=FAL
 
 \pagebreak
 
-
+###Copy of DeepSee_Diaceutics_20170208_20170228_v1.csv
 
 ```{r f1,results="asis"}
 
@@ -89,7 +89,7 @@ if(nrow(report$getValidZipCodes())>0)
 \clearpage
 
 
-
+###DeepSee_Diaceutics_20170301_20170320v2_deiddb.csv
 
 
 ```{r f25,results="asis"}
@@ -161,7 +161,7 @@ if(nrow(report$getValidZipCodes())>0)
 \clearpage
 
 
-
+###diaceutic query 2_deid.csv
 
 ```{r f2,results="asis"}
 
@@ -230,6 +230,9 @@ if(nrow(report$getValidZipCodes())>0)
 ```
 \clearpage
 
+
+###Diaceutics 032117_033117v3.csv
+
 ```{r f3,results="asis"}
 
 source("Report.r")
@@ -288,6 +291,9 @@ if(nrow(report$getValidZipCodes())>0)
  
 ```
 \clearpage
+
+###Diaceutics 04012017_04132017deid.csv
+
 
 ```{r f4,results="asis"}
 
@@ -348,6 +354,9 @@ if(nrow(report$getValidZipCodes())>0)
 ```
 \clearpage
 
+
+###Diaceutics onco 020817_032017_deid_db.csv
+
 ```{r f5,results="asis"}
 
 source("Report.r")
@@ -406,6 +415,9 @@ if(nrow(report$getValidZipCodes())>0)
  
 ```
 \clearpage
+
+
+###Diaceutics v2_deid_061517.csv
 
 ```{r f6,results="asis"}
 
@@ -467,6 +479,8 @@ if(nrow(report$getValidZipCodes())>0)
 
 \clearpage
 
+###diaceutics_0701_312017_deid.csv
+
 ```{r f7,results="asis"}
 
 source("Report.r")
@@ -527,6 +541,9 @@ if(nrow(report$getValidZipCodes())>0)
 
 \clearpage
 
+
+###Diaceutics_20170114_20170207_new1_update.csv
+
 ```{r f8,results="asis"}
 
 source("Report.r")
@@ -585,6 +602,8 @@ if(nrow(report$getValidZipCodes())>0)
  
 ```
 \clearpage
+
+###LBCL_010116_043017_deid.csv
 
 ```{r f9,results="asis"}
 
@@ -645,6 +664,7 @@ if(nrow(report$getValidZipCodes())>0)
 ```
 \clearpage
 
+###Oncolgy_Diaceuticsv3_1211_0113.csv
 
 ```{r f10,results="asis"}
 
@@ -668,7 +688,7 @@ if(nrow(report$getSurgicalNumbers())>0){
   names(tab) <- c('Row','Text' )
   print(tab,include.rownames=FALSE,caption.placement = "top" ,tabular.environment="longtable")
 }
-# 
+ 
 if(nrow(report$getPatientIdentifiers())>0){
  tab<- xtable(as.data.table(head(report$getPatientIdentifiers()[,c("rownumber","obfuscatedtext")],n=reportParams$instancesToShow)),caption=paste0(safeDataFileName, " Patient Identifiers"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
   names(tab) <- c('Row','Text' )
