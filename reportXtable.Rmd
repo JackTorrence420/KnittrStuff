@@ -27,7 +27,7 @@ library(data.table)
 library(xtable)
 options(xtable.comment = FALSE)
 
-     reportParams = ReportParameters$new(dataFile=tolower("Copy of DeepSee_Diaceutics_20170208_20170228_v1.csv"), showOriginal = FALSE,extractedTextLength=80L, instancesToShow=100L, printInstances =FALSE,  wrapTextWidth=40L )
+     reportParams = ReportParameters$new(dataFile=tolower("Copy of DeepSee_Diaceutics_20170208_20170228_v1.csv"), showOriginal = FALSE,extractedTextLength=95L, instancesToShow=100L,   wrapTextWidth=40L )
 report<-Report$new(reportParams)
 
 safeDataFileName<-gsub('_', ' ', reportParams$dataFile)
@@ -101,7 +101,7 @@ library(data.table)
 library(xtable)
 options(xtable.comment = FALSE)
 
-     reportParams = ReportParameters$new(dataFile=tolower("DeepSee_Diaceutics_20170301_20170320v2_deiddb.csv"), showOriginal = FALSE,extractedTextLength=80L, instancesToShow=100L, printInstances =FALSE,  wrapTextWidth=40L )
+     reportParams = ReportParameters$new(dataFile=tolower("DeepSee_Diaceutics_20170301_20170320v2_deiddb.csv"), showOriginal = FALSE,extractedTextLength=95L, instancesToShow=100L,   wrapTextWidth=40L )
 report<-Report$new(reportParams)
 
 safeDataFileName<-gsub('_', ' ', reportParams$dataFile)
@@ -172,7 +172,7 @@ library(data.table)
 library(xtable)
 options(xtable.comment = FALSE)
 
-     reportParams = ReportParameters$new(dataFile=tolower("diaceutic query 2_deid.csv"), showOriginal = FALSE,extractedTextLength=80L, instancesToShow=100L, printInstances =FALSE,  wrapTextWidth=40L )
+     reportParams = ReportParameters$new(dataFile=tolower("diaceutic query 2_deid.csv"), showOriginal = FALSE,extractedTextLength=95L, instancesToShow=100L,   wrapTextWidth=40L )
 report<-Report$new(reportParams)
 
 safeDataFileName<-gsub('_', ' ', reportParams$dataFile)
@@ -242,7 +242,7 @@ library(data.table)
 library(xtable)
 options(xtable.comment = FALSE)
 
-     reportParams = ReportParameters$new(dataFile=tolower("Diaceutics 032117_033117v3.csv"), showOriginal = FALSE,extractedTextLength=80L, instancesToShow=100L, printInstances =FALSE,  wrapTextWidth=40L )
+     reportParams = ReportParameters$new(dataFile=tolower("Diaceutics 032117_033117v3.csv"), showOriginal = FALSE,extractedTextLength=95L, instancesToShow=100L,   wrapTextWidth=40L )
 report<-Report$new(reportParams)
 
 safeDataFileName<-gsub('_', ' ', reportParams$dataFile)
@@ -304,7 +304,7 @@ library(data.table)
 library(xtable)
 options(xtable.comment = FALSE)
 
-     reportParams = ReportParameters$new(dataFile=tolower("Diaceutics 04012017_04132017deid.csv"), showOriginal = FALSE,extractedTextLength=80L, instancesToShow=100L, printInstances =FALSE,  wrapTextWidth=40L )
+     reportParams = ReportParameters$new(dataFile=tolower("Diaceutics 04012017_04132017deid.csv"), showOriginal = FALSE,extractedTextLength=95L, instancesToShow=100L,   wrapTextWidth=40L )
 report<-Report$new(reportParams)
 
 safeDataFileName<-gsub('_', ' ', reportParams$dataFile)
@@ -366,7 +366,7 @@ library(data.table)
 library(xtable)
 options(xtable.comment = FALSE)
 
-     reportParams = ReportParameters$new(dataFile=tolower("Diaceutics onco 020817_032017_deid_db.csv"), showOriginal = FALSE,extractedTextLength=80L, instancesToShow=100L, printInstances =FALSE,  wrapTextWidth=40L )
+     reportParams = ReportParameters$new(dataFile=tolower("Diaceutics onco 020817_032017_deid_db.csv"), showOriginal = FALSE,extractedTextLength=95L, instancesToShow=100L,   wrapTextWidth=40L )
 report<-Report$new(reportParams)
 
 safeDataFileName<-gsub('_', ' ', reportParams$dataFile)
@@ -428,7 +428,7 @@ library(data.table)
 library(xtable)
 options(xtable.comment = FALSE)
 
-     reportParams = ReportParameters$new(dataFile=tolower("Diaceutics v2_deid_061517.csv"), showOriginal = FALSE,extractedTextLength=80L, instancesToShow=100L, printInstances =FALSE,  wrapTextWidth=40L )
+     reportParams = ReportParameters$new(dataFile=tolower("Diaceutics v2_deid_061517.csv"), showOriginal = FALSE,extractedTextLength=95L, instancesToShow=100L,   wrapTextWidth=40L )
 report<-Report$new(reportParams)
 
 safeDataFileName<-gsub('_', ' ', reportParams$dataFile)
@@ -490,7 +490,7 @@ library(data.table)
 library(xtable)
 options(xtable.comment = FALSE)
 
-     reportParams = ReportParameters$new(dataFile=tolower("diaceutics_0701_312017_deid.csv"), showOriginal = FALSE,extractedTextLength=80L, instancesToShow=60L, printInstances =FALSE,  wrapTextWidth=40L )
+     reportParams = ReportParameters$new(dataFile=tolower("diaceutics_0701_312017_deid.csv"), showOriginal = FALSE,extractedTextLength=95L, instancesToShow=60L,   wrapTextWidth=40L )
 report<-Report$new(reportParams)
 
 safeDataFileName<-gsub('_', ' ', reportParams$dataFile)
@@ -553,7 +553,7 @@ library(data.table)
 library(xtable)
 options(xtable.comment = FALSE)
 
-     reportParams = ReportParameters$new(dataFile=tolower("Diaceutics_20170114_20170207_new1_update.csv"), showOriginal = FALSE,extractedTextLength=80L, instancesToShow=60L, printInstances =FALSE,  wrapTextWidth=40L )
+     reportParams = ReportParameters$new(dataFile=tolower("Diaceutics_20170114_20170207_new1_update.csv"), showOriginal = FALSE,extractedTextLength=95L, instancesToShow=60L,   wrapTextWidth=40L )
 report<-Report$new(reportParams)
 
 safeDataFileName<-gsub('_', ' ', reportParams$dataFile)
@@ -614,7 +614,7 @@ library(data.table)
 library(xtable)
 options(xtable.comment = FALSE)
 
-     reportParams = ReportParameters$new(dataFile=tolower("LBCL_010116_043017_deid.csv"), showOriginal = FALSE,extractedTextLength=80L, instancesToShow=60L, printInstances =FALSE,  wrapTextWidth=40L )
+     reportParams = ReportParameters$new(dataFile=tolower("LBCL_010116_043017_deid.csv"), showOriginal = FALSE,extractedTextLength=95L, instancesToShow=60L,   wrapTextWidth=40L )
 report<-Report$new(reportParams)
 
 safeDataFileName<-gsub('_', ' ', reportParams$dataFile)
@@ -675,7 +675,7 @@ library(data.table)
 library(xtable)
 options(xtable.comment = FALSE)
 
-     reportParams = ReportParameters$new(dataFile=tolower("Oncolgy_Diaceuticsv3_1211_0113.csv"), showOriginal = FALSE,extractedTextLength=80L, instancesToShow=60L, printInstances =FALSE,  wrapTextWidth=40L )
+     reportParams = ReportParameters$new(dataFile=tolower("Oncolgy_Diaceuticsv3_1211_0113.csv"), showOriginal = FALSE,extractedTextLength=95L, instancesToShow=60L,   wrapTextWidth=40L )
 report<-Report$new(reportParams)
 
 safeDataFileName<-gsub('_', ' ', reportParams$dataFile)
