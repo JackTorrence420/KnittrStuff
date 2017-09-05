@@ -1,0 +1,118 @@
+---
+title: "HIPAA Identifiers Report"
+subtitle: '`r format(Sys.Date(), "%B %d, %Y")`'
+fontsize: 10pt
+geometry: margin=0.5cm
+output:
+  pdf_document:
+    includes:
+        in_header: mySty.sty
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(xtable.comment = FALSE,echo = FALSE,comment=NA,message=FALSE, warning=FALSE)
+```
+
+
+
+\pagestyle{plain}
+
+
+
+```{r f1,results="asis"}
+
+source("Report.r")
+     
+library(knitr)
+library(data.table)
+library(xtable)
+options(xtable.comment = FALSE,xtable.table.placement="!h")
+
+
+
+   for (csv in dir(pattern = ".csv$"))
+   {
+     reportParams =ReportParameters$new(dataFile=csv, showOriginal = TRUE,extractedTextLength=85L, instancesToShow=100L )
+     report<-Report$new(reportParams)
+     
+     
+     safeDataFileName<-gsub('_', ' ', reportParams$dataFile)
+
+cat("\n\n\\clearpage\n")
+     
+cat('\n##', paste(reportParams$dataFile), '\n')
+     
+print(xtable(report$ShowTotalsdt(),align= c("|p{0cm}|", "p{6cm}|" ,"p{11cm}|"),caption=paste0(safeDataFileName," Total PHI Identifier Counts")),include.rownames=FALSE,caption.placement = "top")
+
+if(nrow(report$getSurgicalNumbers())>0){
+  
+  
+  cat("\n\n\\clearpage\n")
+  cat('\n###', paste(reportParams$dataFile, "Surgical Numbers"), '\n')
+  
+ tab<- xtable(as.data.table(head(report$getSurgicalNumbers()[,c("rownumber","obfuscatedtext")],n=reportParams$instancesToShow)),caption=paste0(safeDataFileName, " Surgical Numbers"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+  names(tab) <- c('Row','Text' )
+  print(tab,include.rownames=FALSE,caption.placement = "top" )
+}
+
+if(nrow(report$getPatientIdentifiers())>0){
+  cat("\n\n\\clearpage\n")
+    cat('\n###', paste(reportParams$dataFile, "Patient Identifiers"), '\n')
+ tab<- xtable(as.data.table(head(report$getPatientIdentifiers()[,c("rownumber","obfuscatedtext")],n=reportParams$instancesToShow)),caption=paste0(safeDataFileName, " Patient Identifiers"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+  names(tab) <- c('Row','Text' )
+  print(tab,include.rownames=FALSE,caption.placement = "top" )
+}
+
+
+if(nrow(report$getNameChanges())>0){
+  cat("\n\n\\clearpage\n")
+ cat('\n###', paste(reportParams$dataFile, "Name Changes"), '\n')
+ tab<- xtable(as.data.table(head(report$getNameChanges()[,c("rownumber","obfuscatedtext")],n=reportParams$instancesToShow)),caption=paste0(safeDataFileName, " Name Changes"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+  names(tab) <- c('Row','Text' )
+  print(tab,include.rownames=FALSE,caption.placement = "top" )
+}
+
+if(nrow(report$getpatientDateOfBirth())>0)
+{
+  cat("\n\n\\clearpage\n")
+   cat('\n###', paste(reportParams$dataFile, "Date Of Birth"), '\n')
+ tab<- xtable(as.data.table(head(report$getpatientDateOfBirth()[,c("rownumber","obfuscatedtext")],n=50)),caption=paste0(safeDataFileName, " Patient Date Of Birth"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+  names(tab) <- c('Row','Text' )
+  print(tab,include.rownames=FALSE,caption.placement = "top" )
+}
+
+if(nrow(report$getPatDates())>0)
+{
+  cat("\n\n\\clearpage\n")
+   cat('\n###', paste(reportParams$dataFile, "Patient Dates"), '\n')
+ tab<- xtable(as.data.table(head(report$getPatDates()[,c("rownumber","patient draw date")],n=50)),caption=paste0(safeDataFileName, " Patient Draw Dates"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+  print(tab,include.rownames=FALSE,caption.placement = "top" )
+}
+
+  
+if(nrow(report$getPatAgeOverMax())>0)
+{
+  cat("\n\n\\clearpage\n")
+   cat('\n###', paste(reportParams$dataFile, "Patient Over Age Max"), '\n')
+ tab<- xtable(as.data.table(head(report$getPatAgeOverMax()[,c("rownumber","patient age over max")],n=50)),caption=paste0(safeDataFileName, " Examples Of Patient Age Over Max"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+  print(tab,include.rownames=FALSE,caption.placement = "top" )
+}
+
+  
+if(nrow(report$getValidZipCodes())>0)
+{
+  cat("\n\n\\clearpage\n")
+   cat('\n###', paste(reportParams$dataFile, "Valid Zip Codes"), '\n')
+ tab<- xtable(as.data.table(head(report$getValidZipCodes()[,c("rownumber","patient address postal code")],n=50)),caption=paste0(safeDataFileName, " Valid Zip Codes"),align= c("p{0cm}|", "p{2cm}|" ,"p{15cm}|"))
+  print(tab,include.rownames=FALSE,caption.placement = "top" )
+}
+
+
+     
+   }
+
+
+
+ 
+```
