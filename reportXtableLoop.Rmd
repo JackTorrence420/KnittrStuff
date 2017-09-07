@@ -27,13 +27,30 @@ source("Report.r")
 library(knitr)
 library(data.table)
 library(xtable)
-options(xtable.comment = FALSE,xtable.table.placement="!htp", tabular.environment="longtable")
 
+
+print_instances=function(instances,columnNames, column_definition, title, reportParams){
+  if(nrow(instances)>0){
+    total_samples= as.integer(nrow(instances))
+ if((total_samples)>reportParams$instancesToShow)
+   total_samples=reportParams$instancesToShow
+ 
+  cat("\n\n\\clearpage\n")
+   cat('\n###', paste(reportParams$dataFile, title), '\n')
+   
+ tab<- xtable(as.data.table(head(instances[,columnNames],n=reportParams$instancesToShow)),caption=paste0(safeDataFileName, " ", title," ","(",total_samples," Samples)"),align= column_definition)
+  print(tab,include.rownames=FALSE,caption.placement = "top" )
+    
+  }
+}
+
+
+options(xtable.comment = FALSE,xtable.table.placement="!htp", tabular.environment="longtable")
 column_definition<-c("p{0cm}|", "p{1.5cm}|" ,"p{15cm}|")
 
    for (csv in dir(pattern = ".csv$"))
    {
-     reportParams =ReportParameters$new(dataFile=csv, showOriginal = TRUE,extractedTextLength=90L, instancesToShow=55L )
+     reportParams =ReportParameters$new(dataFile=csv, showOriginal = TRUE,extractedTextLength=90L, instancesToShow=50L )
      report<-Report$new(reportParams)
      
      
@@ -45,72 +62,120 @@ cat('\n##', paste(reportParams$dataFile), '\n')
      
 print(xtable(report$ShowTotalsdt(),align=c("|p{0cm}|", "p{6cm}|" ,"p{11cm}|") ,caption=paste0(safeDataFileName," Total PHI Identifier Counts")),include.rownames=FALSE,caption.placement = "top")
 
-if(nrow(report$getSurgicalNumbers())>0){
+# if(nrow(report$getSurgicalNumbers())>0){
+#  total_samples= as.integer(nrow(report$getSurgicalNumbers()))
+#  if((total_samples)>reportParams$instancesToShow)
+#    total_samples=reportParams$instancesToShow
+#                            
+#   cat("\n\n\\clearpage\n")
+#   cat('\n###', paste(reportParams$dataFile, "Surgical Numbers"), '\n')
+#   
+#  tab<- xtable(as.data.table(head(report$getSurgicalNumbers()[,c("rownumber","obfuscatedtext")],n=reportParams$instancesToShow)),caption=paste0(safeDataFileName, " Surgical Numbers: (",total_samples," Samples)" ),align= column_definition)
+#   names(tab) <- c('Row','Text' )
+#   print(tab,include.rownames=FALSE,caption.placement = "top" )
+# }
+
+print_instances(instances=report$getSurgicalNumbers(),columnNames=c("rownumber","obfuscatedtext"), column_definition, title="Surgical Numbers",reportParams)
+
+
+# if(nrow(report$getPatientIdentifiers())>0){
+#    total_samples= as.integer(nrow(report$getPatientIdentifiers()))
+#  if((total_samples)>reportParams$instancesToShow)
+#    total_samples=reportParams$instancesToShow
+#   cat("\n\n\\clearpage\n")
+#     cat('\n###', paste(reportParams$dataFile, "Patient Identifiers"), '\n')
+#  tab<- xtable(as.data.table(head(report$getPatientIdentifiers()[,c("rownumber","obfuscatedtext")],n=reportParams$instancesToShow)),caption=paste0(safeDataFileName, " Patient Identifiers(",total_samples," Samples)"),align= column_definition)
+#   names(tab) <- c('Row','Text' )
+#   print(tab,include.rownames=FALSE,caption.placement = "top" )
+# }
+
+print_instances(instances=report$getPatientIdentifiers(),columnNames=c("rownumber","obfuscatedtext"), column_definition, title="Patient Identifiers",reportParams)
+
+
+# if(nrow(report$getNameChanges())>0){
+#    total_samples= as.integer(nrow(report$getNameChanges()))
+#  if((total_samples)>reportParams$instancesToShow)
+#    total_samples=reportParams$instancesToShow
+#   cat("\n\n\\clearpage\n")
+#  cat('\n###', paste(reportParams$dataFile, "Name Changes"), '\n')
+#  tab<- xtable(as.data.table(head(report$getNameChanges()[,c("rownumber","obfuscatedtext")],n=reportParams$instancesToShow)),caption=paste0(safeDataFileName, " Name Changes(",total_samples," Samples)"),align= column_definition)
+#   names(tab) <- c('Row','Text' )
+#   print(tab,include.rownames=FALSE,caption.placement = "top" )
+# }
+
+print_instances(instances=report$getNameChanges(),columnNames=c("rownumber","obfuscatedtext"), column_definition, title="Name Changes",reportParams)
+
+
+
+
+
+# if(nrow(report$getpatientDateOfBirth())>0)
+# {
+#      total_samples= as.integer(nrow(report$getpatientDateOfBirth()))
+#  if((total_samples)>reportParams$instancesToShow)
+#    total_samples=reportParams$instancesToShow
+#   cat("\n\n\\clearpage\n")
+#    cat('\n###', paste(reportParams$dataFile, "Date Of Birth"), '\n')
+#  tab<- xtable(as.data.table(head(report$getpatientDateOfBirth()[,c("rownumber","obfuscatedtext")],n=reportParams$instancesToShow)),caption=paste0(safeDataFileName, " Patient Date Of Birth(",total_samples," Samples)"),align= column_definition)
+#   names(tab) <- c('Row','Text' )
+#   print(tab,include.rownames=FALSE,caption.placement = "top" )
+# }
+
+
+print_instances(instances=report$getpatientDateOfBirth(),columnNames=c("rownumber","obfuscatedtext"), column_definition, title="Patient Date Of Birth",reportParams)
+
+
+
+# if(nrow(report$getPatDates())>0)
+# {
+# total_samples= as.integer(nrow(report$getPatDates()))
+#  if((total_samples)>reportParams$instancesToShow)
+#    total_samples=reportParams$instancesToShow
+#   
+#   cat("\n\n\\clearpage\n")
+#    cat('\n###', paste(reportParams$dataFile, "Patient Dates"), '\n')
+#  tab<- xtable(as.data.table(head(report$getPatDates()[,c("rownumber","patient draw date")],n=reportParams$instancesToShow)),caption=paste0(safeDataFileName, " Patient Draw Dates(",total_samples," Samples)"),align= column_definition)
+#   print(tab,include.rownames=FALSE,caption.placement = "top" )
+# }
+
+
+print_instances(instances=report$getPatDates(),columnNames=c("rownumber","patient draw date"), column_definition, title="Patient Draw Dates",reportParams)
+
   
-  
-  cat("\n\n\\clearpage\n")
-  cat('\n###', paste(reportParams$dataFile, "Surgical Numbers"), '\n')
-  
- tab<- xtable(as.data.table(head(report$getSurgicalNumbers()[,c("rownumber","obfuscatedtext")],n=reportParams$instancesToShow)),caption=paste0(safeDataFileName, " Surgical Numbers"),align= column_definition)
-  names(tab) <- c('Row','Text' )
-  print(tab,include.rownames=FALSE,caption.placement = "top" )
-}
+# if(nrow(report$getPatAgeOverMax())>0)
+# {
+#   total_samples= as.integer(nrow(report$getPatAgeOverMax()))
+#  if((total_samples)>reportParams$instancesToShow)
+#    total_samples=reportParams$instancesToShow
+#  
+#   cat("\n\n\\clearpage\n")
+#    cat('\n###', paste(reportParams$dataFile, "Patient Over Age Max"), '\n')
+#  tab<- xtable(as.data.table(head(report$getPatAgeOverMax()[,c("rownumber","patient age over max")],n=reportParams$instancesToShow)),caption=paste0(safeDataFileName, " Examples Of Patient Age Over Max(",total_samples," Samples)"),align= column_definition)
+#   print(tab,include.rownames=FALSE,caption.placement = "top" )
+# }
 
-if(nrow(report$getPatientIdentifiers())>0){
-  cat("\n\n\\clearpage\n")
-    cat('\n###', paste(reportParams$dataFile, "Patient Identifiers"), '\n')
- tab<- xtable(as.data.table(head(report$getPatientIdentifiers()[,c("rownumber","obfuscatedtext")],n=reportParams$instancesToShow)),caption=paste0(safeDataFileName, " Patient Identifiers"),align= column_definition)
-  names(tab) <- c('Row','Text' )
-  print(tab,include.rownames=FALSE,caption.placement = "top" )
-}
-
-
-if(nrow(report$getNameChanges())>0){
-  cat("\n\n\\clearpage\n")
- cat('\n###', paste(reportParams$dataFile, "Name Changes"), '\n')
- tab<- xtable(as.data.table(head(report$getNameChanges()[,c("rownumber","obfuscatedtext")],n=reportParams$instancesToShow)),caption=paste0(safeDataFileName, " Name Changes"),align= column_definition)
-  names(tab) <- c('Row','Text' )
-  print(tab,include.rownames=FALSE,caption.placement = "top" )
-}
-
-if(nrow(report$getpatientDateOfBirth())>0)
-{
-  cat("\n\n\\clearpage\n")
-   cat('\n###', paste(reportParams$dataFile, "Date Of Birth"), '\n')
- tab<- xtable(as.data.table(head(report$getpatientDateOfBirth()[,c("rownumber","obfuscatedtext")],n=reportParams$instancesToShow)),caption=paste0(safeDataFileName, " Patient Date Of Birth"),align= column_definition)
-  names(tab) <- c('Row','Text' )
-  print(tab,include.rownames=FALSE,caption.placement = "top" )
-}
-
-if(nrow(report$getPatDates())>0)
-{
-  cat("\n\n\\clearpage\n")
-   cat('\n###', paste(reportParams$dataFile, "Patient Dates"), '\n')
- tab<- xtable(as.data.table(head(report$getPatDates()[,c("rownumber","patient draw date")],n=reportParams$instancesToShow)),caption=paste0(safeDataFileName, " Patient Draw Dates"),align= column_definition)
-  print(tab,include.rownames=FALSE,caption.placement = "top" )
-}
+print_instances(instances=report$getPatAgeOverMax(),columnNames=c("rownumber","patient age over max"), column_definition, title="Patient Over Age Max",reportParams)
 
   
-if(nrow(report$getPatAgeOverMax())>0)
-{
-  cat("\n\n\\clearpage\n")
-   cat('\n###', paste(reportParams$dataFile, "Patient Over Age Max"), '\n')
- tab<- xtable(as.data.table(head(report$getPatAgeOverMax()[,c("rownumber","patient age over max")],n=reportParams$instancesToShow)),caption=paste0(safeDataFileName, " Examples Of Patient Age Over Max"),align= column_definition)
-  print(tab,include.rownames=FALSE,caption.placement = "top" )
-}
+# if(nrow(report$getValidZipCodes())>0)
+# {
+#     total_samples= as.integer(nrow(report$getValidZipCodes()))
+#  if((total_samples)>reportParams$instancesToShow)
+#    total_samples=reportParams$instancesToShow
+#   cat("\n\n\\clearpage\n")
+#    cat('\n###', paste(reportParams$dataFile, "Valid Zip Codes"), '\n')
+#  tab<- xtable(as.data.table(head(report$getValidZipCodes()[,c("rownumber","patient address postal code")],n=reportParams$instancesToShow)),caption=paste0(safeDataFileName, " Valid Zip Codes(",total_samples," Samples)"),align= column_definition)
+#   print(tab,include.rownames=FALSE,caption.placement = "top" )
+# }
 
-  
-if(nrow(report$getValidZipCodes())>0)
-{
-  cat("\n\n\\clearpage\n")
-   cat('\n###', paste(reportParams$dataFile, "Valid Zip Codes"), '\n')
- tab<- xtable(as.data.table(head(report$getValidZipCodes()[,c("rownumber","patient address postal code")],n=reportParams$instancesToShow)),caption=paste0(safeDataFileName, " Valid Zip Codes"),align= column_definition)
-  print(tab,include.rownames=FALSE,caption.placement = "top" )
-}
-
+print_instances(instances=report$getValidZipCodes(),columnNames=c("rownumber","patient address postal code"), column_definition, title="patient address postal code",reportParams)
 
      
    }
+
+
+  
+
 
 
 
