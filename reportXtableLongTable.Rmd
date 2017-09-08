@@ -29,6 +29,22 @@ library(data.table)
 library(xtable)
 
 
+addtorow          <- list()
+addtorow$pos      <- list()
+addtorow$pos[[1]] <- c(0)
+addtorow$command  <- c(paste("\\hline \n",
+                             "\\endhead \n",
+                             "\\hline \n",
+                             "{\\footnotesize Continued..} \n",
+                             "\\endfoot \n",
+                             "\\endlastfoot \n",sep=""))
+
+
+
+
+
+
+
 print_instances = function(instances,
 columnNames,
 column_definition,
@@ -63,7 +79,10 @@ align = column_definition
 )
 print(tab,
 include.rownames = FALSE,
-caption.placement = "top",tabular.environment="longtable",floating=FALSE)
+caption.placement = "top",tabular.environment="longtable",floating=FALSE, 
+
+      add.to.row = addtorow,     # this is where you actually make the substitution
+      hline.after=c(-1))         # because addtorow will substitute the default hline for the first row)
 
 }
 }
