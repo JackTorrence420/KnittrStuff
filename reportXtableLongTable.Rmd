@@ -54,10 +54,10 @@ reportParams) {
 samples_label<-""  
 if (nrow(instances) > 0) {
 total_samples = as.integer(nrow(instances))
-if ((total_samples) > reportParams$instancesToShow){
+if (isTRUE(all.equal(total_samples,reportParams$instancesToShow))){
   
-  samples_Label<-paste0("(", reportParams$instancesToShow," samples of ",total_samples,")") 
-  total_samples = reportParams$instancesToShow                   
+  samples_label<-paste0("(first ", reportParams$instancesToShow,")") 
+            
                         
 }
 
